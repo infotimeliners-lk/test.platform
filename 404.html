@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Timeliners</title>
+<script>
+(function(){
+  var seg = location.pathname.replace(/^\//, '').split('/')[0];
+  if (!seg || seg === 'index.html' || seg === '404.html' || seg.indexOf('.') !== -1) {
+    window.location.replace('/'); return;
+  }
+  try { sessionStorage.setItem('tl_redirect', seg); } catch(e) {}
+  window.location.replace('/');
+})();
+</script>
+</head>
+<body></body>
+</html>
